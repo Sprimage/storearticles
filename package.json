@@ -9,10 +9,11 @@
     "clean": "rimraf build/"
   },
   "dependencies": {
-    "rimraf": "^2.6.2",
-    "truffle": "^5.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "expressjs": "^1.0.1"
+    "expressjs": "^1.0.1",
+    "kool-makerpccall": "^0.1.0",
+    "rimraf": "^2.6.2",
+    "truffle": "^5.0.0"
   }
 }

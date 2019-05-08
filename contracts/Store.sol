@@ -1,22 +1,14 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity >= 0.5.0;
 
-contract Store {
-  event ArticleAddedInTransaction();
-  event ArticleAddedInArray(uint id);
-  event ArticleAddedInEvent(string content);
-
-  string[] public articleArray;
-
-  function inTransaction() external {
-    emit ArticleAddedInTransaction();
+contract DecentralizedJournal {
+  mapping (address => uint256[]) public articlesByAuthor;
+  uint256[] public articles;
+  mapping (address => string) public usernames;
+  function setUsername(string calldata username) external {
+    usernames[msg.sender] = username;
   }
-
-  function inArray(string calldata content) external  {
-    emit ArticleAddedInArray(articleArray.length);
-    articleArray.push(content);
-  }
-
-  function inEvent(string calldata content) external {
-    emit ArticleAddedInEvent(content);
+  function publishArticle() external {
+    articles.push(block.number);
+    articlesByAuthor[msg.sender].push(block.number);
   }
 }

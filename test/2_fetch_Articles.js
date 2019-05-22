@@ -9,6 +9,9 @@ const {
 
 const rpcCall = require('kool-makerpccall');
 
+let contractInstance;
+
+
 contract('Store', (accounts) => {
    beforeEach(async () => {
       contractInstance = await Store.deployed()
@@ -28,4 +31,5 @@ it('should fetch an article from the blockchain', async () => {
         };
 
         const getArticlesForBlockByUser = async (blockNumber, user) => (await getArticlesForBlock(blockNumber)).filter(({ author }) => author === user).map(({ article }) => article);
-  });
+  })
+})

@@ -28,6 +28,8 @@ it('should fetch an article from the blockchain', async () => {
             author: v.from,
             article: utils.hexToAscii(addHexPrefi(v.data.substr(10)))
           }));
+
+          console.log(transactions);
         };
 
         const getArticlesForBlockByUser = async (blockNumber, user) => (await getArticlesForBlock(blockNumber)).filter(({ author }) => author === user).map(({ article }) => article);

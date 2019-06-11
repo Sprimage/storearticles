@@ -4,6 +4,8 @@ contract Store {
   
   mapping (address => uint256[]) public articlesByAuthor;
   uint256[] public articles;
+  uint256 public totalArticles;
+
   mapping (address => string) public usernames;
 
   function setUsername(string calldata username) external {
@@ -11,6 +13,7 @@ contract Store {
   }
   function publishArticle() external {
     articles.push(block.number);
+    totalArticles++;
     articlesByAuthor[msg.sender].push(block.number);
   }
 

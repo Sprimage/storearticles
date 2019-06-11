@@ -45,11 +45,10 @@
     <br />
     <br />
 
-    <form>
+    <form id = "frm1">
       <div class="form-group">
         <label for="exampleFormControlTextarea1" id="inspire"
-          >Post Content</label
-        >
+          >Post Content</label>
         <textarea
           class="form-control col-md border border-warning rounded-pill"
           id="exampleFormControlTextarea1"
@@ -62,14 +61,15 @@
 
     <br />
     <br />
-
+    <form id="refresh">
     <span id="inspire"> Feeds </span>
-
+    <button type="button" id="secBtn" class="btn btn-success">Refresh</button>
+    </form>
     <br />
     <br />
 
     <div class="jumbotron jumbotron-fluid">
-      <div class="container"></div>
+      <div class="container" id="directory"></div>
     </div>
 
     <script
@@ -197,7 +197,7 @@
     ];
     //Put Your Infura provider here
     const httpProvider = new Web3.providers.HttpProvider(
-      "https://ropsten.infura.io/m62CiajFe86L4iYN20tw"
+      "xxxx"
     );
     const web3 = new Web3(httpProvider);
 
@@ -206,7 +206,9 @@
     document.getElementById("myBtn").addEventListener("click", async () => {
       
       /// To do to setup metamask
-
+      var x = document.getElementById("frm1");
+       var text = x.elements[0].value;
+      // console.log(text);
 
       /// To write Article to the blockchain
 
@@ -219,10 +221,12 @@
       data: web3.utils
         .keccak256("publishArticle()")
         .slice(0, 10)
-        .concat(web3.utils.utf8ToHex("/////PUT YOUR ARTICLE HERE////").slice(2))
+        .concat(web3.utils.utf8ToHex(text).slice(2))
     };
+
+   });
       
-      
+  document.getElementById("secBtn").addEventListener("click", async () => {  
       /// To Read Articles
       const data = await contractInstance.methods
         .fetchLatestArticle()
@@ -237,8 +241,8 @@
           "0xedcfafe60000000000000000000000000000000000000000000000000000000000000000"
       });
       console.log("newValue", newValue);
+        document.getElementById('directory').innerHtml = newValue;
     });
-
   
   </script>
 </html>

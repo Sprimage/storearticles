@@ -1,64 +1,244 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <meta charset="utf-8">
-        <title>Resist Censor</title>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Pacifico&display=swap">
-                <style>
-                  body {
-                    background-image: url("https://www.resumewritingacademy.com/resources/Pictures/writer.jpeg");
-                    background-repeat: no-repeat;
-                  }
+    <meta charset="utf-8" />
+    <title>Resist Censor</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Anton|Pacifico&display=swap"
+    />
+    <style>
+      body {
+        background-image: url("https://www.resumewritingacademy.com/resources/Pictures/writer.jpeg");
+        background-repeat: no-repeat;
+      }
 
-                  #topper {
-                    font-family: 'Anton', serif;
-                    font-size: 48px;
-                  }
+      #topper {
+        font-family: "Anton", serif;
+        font-size: 48px;
+      }
 
-                  #inspire {
-                    font-family: 'Pacifico', cursive;
-                    font-size: 24px;
-                  }
-                </style>
+      #inspire {
+        font-family: "Pacifico", cursive;
+        font-size: 24px;
+      }
+    </style>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>﻿
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.32/dist/web3.min.js"></script>
   </head>
   <body>
     <!-- Image and text -->
-      <nav class="navbar navbar-light bg-primary">
-          <p class="text-right" id="topper">Decentralized Publishing</p>
-      </nav>
-      
-      <br />
-      <br />
+    <nav class="navbar navbar-light bg-primary">
+      <p class="text-right" id="topper">Decentralized Publishing</p>
+    </nav>
 
+    <br />
+    <br />
 
-       <form>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1" id="inspire">Post Content</label>
-            <textarea class="form-control col-md border border-warning rounded-pill" id="exampleFormControlTextarea1" rows="4"></textarea>
-          <br />
-          <button type="button" class="btn btn-success">Submit</button>
-       </form>
-        
-        <br/>
-        <br/>
-        
-      <span id="inspire"> Feeds </span>
-
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" id="inspire"
+          >Post Content</label
+        >
+        <textarea
+          class="form-control col-md border border-warning rounded-pill"
+          id="exampleFormControlTextarea1"
+          rows="4"
+        ></textarea>
         <br />
-        <br />
+        <button type="button" id="myBtn" class="btn btn-success">Submit</button>
+      </div>
+    </form>
 
-          <div class="jumbotron jumbotron-fluid">
-              <div class="container">
-               
-             </div>
-         </div> 
+    <br />
+    <br />
 
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <span id="inspire"> Feeds </span>
+
+    <br />
+    <br />
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
+  <script type="text/javascript">
+    const address = "0xcefd5d23b5c30c2f16d0ac9357ae30373ef77cb7";
+    const abi = [
+      {
+        constant: false,
+        inputs: [],
+        name: "publishArticle",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        constant: false,
+        inputs: [
+          {
+            name: "username",
+            type: "string"
+          }
+        ],
+        name: "setUsername",
+        outputs: [],
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        payable: false,
+        stateMutability: "nonpayable",
+        type: "fallback"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: "",
+            type: "uint256"
+          }
+        ],
+        name: "articles",
+        outputs: [
+          {
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: "",
+            type: "address"
+          },
+          {
+            name: "",
+            type: "uint256"
+          }
+        ],
+        name: "articlesByAuthor",
+        outputs: [
+          {
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [],
+        name: "fetchLatestArticle",
+        outputs: [
+          {
+            name: "",
+            type: "uint256"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        constant: true,
+        inputs: [
+          {
+            name: "",
+            type: "address"
+          }
+        ],
+        name: "usernames",
+        outputs: [
+          {
+            name: "",
+            type: "string"
+          }
+        ],
+        payable: false,
+        stateMutability: "view",
+        type: "function"
+      }
+    ];
+    //Put Your Infura provider here
+    const httpProvider = new Web3.providers.HttpProvider(
+      "https://ropsten.infura.io/m62CiajFe86L4iYN20tw"
+    );
+    const web3 = new Web3(httpProvider);
+
+    const contractInstance = new web3.eth.Contract(abi, address);
+
+    document.getElementById("myBtn").addEventListener("click", async () => {
+      
+      /// To do to setup metamask
+
+
+      /// To write Article to the blockchain
+
+      var rawTx = {
+      gasPrice: web3.utils.numberToHex("100000000000"),
+      gasLimit: web3.utils.numberToHex("1500000"),
+      from: accounts[0],
+      to: contractInstance.address,
+      value: "0x00",
+      data: web3.utils
+        .keccak256("publishArticle()")
+        .slice(0, 10)
+        .concat(web3.utils.utf8ToHex("/////PUT YOUR ARTICLE HERE////").slice(2))
+    };
+      
+      
+      /// To Read Articles
+      const data = await contractInstance.methods
+        .fetchLatestArticle()
+        .encodeABI({
+          from: "0x0B571De503aF201E0fe6787f1DB2f26867D1c1cf",
+          gas: 500000,
+          gasPrice: 10e1
+        });
+      const newValue = await web3.eth.call({
+        to: "0xcefd5d23b5c30c2f16d0ac9357ae30373ef77cb7", // contract address
+        data:
+          "0xedcfafe60000000000000000000000000000000000000000000000000000000000000000"
+      });
+      console.log("newValue", newValue);
+    });
+
+  
+  </script>
 </html>
